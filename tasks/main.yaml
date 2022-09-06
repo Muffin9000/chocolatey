@@ -10,14 +10,14 @@
   changed_when: false
 
 - set_fact:
-    choco_location: "{{ programdata_out.stdout | trim + '\\chocolatey' }}"
+    choco_location: "{{ programData_out.stdout | trim + '\\chocolatey' }}"
 
 - set_fact:
     temp_location: '{{ temp_out.stdout | trim }}'
 
 - name: copy ChocolateyInstall.ps1
   win_copy:
-    src: ChocolateryInstall.ps1
+    src: ChocolateyInstall.ps1
     dest: "{{ temp_location + '\\ChocolateyInstall.ps1' }}"
 
 - name: install chocolatey
